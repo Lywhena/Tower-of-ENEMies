@@ -1,5 +1,8 @@
 import pygame
 
+pygame.init()
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
 class Button:
     def __init__(self, text, x, y, width, height, font, color=WHITE, hover_color=(200, 200, 200)):
         self.text = text
@@ -14,7 +17,7 @@ class Button:
             pygame.draw.rect(surface, self.hover_color, self.rect)
         else:
             pygame.draw.rect(surface, self.color, self.rect)
-        pygame.draw.rect(surface, BLACK, self.rect, 2)  # Borda preta
+        pygame.draw.rect(surface, 'BLACK', self.rect, 2)  # Borda preta
         text_surf = self.font.render(self.text, True, BLACK)
         text_rect = text_surf.get_rect(center=self.rect.center)
         surface.blit(text_surf, text_rect)

@@ -1,4 +1,5 @@
 import pygame
+import random
 
 class Enemy:
     def __init__(self, name, image_path, background_path, questions):
@@ -30,3 +31,7 @@ class Enemy:
         correct_answer = question['options'][question['answer']]
         random.shuffle(question['options'])
         question['answer'] = question['options'].index(correct_answer)
+pygame.init()
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Menu do Jogo")
